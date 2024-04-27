@@ -1,4 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
+.navbar-brand {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;/* Consistent font family */
+    font-size: 1.5rem; /* Consistent size */
+    text-decoration: none; /* Removes underline */
+    display: inline-block; /* Proper alignment */
+}
+.navbar-brand i.fa-bolt {
+    margin-right: 0.5rem; /* Adds spacing between the icon and text */
+    color: #ffc107; /* Gold color for the icon */
+}
+.navbar-brand .bushiPV {
+    color: #ffffff; /* Specific color for 'bushiPV' */
+    font-weight: 700; 
+}
+
+.navbar-brand .montage {
+    color: #eda855; /* Different color for 'montage' */
+}
+
+/* Hover effects for the logo */
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus {
+    text-decoration: none; /* Ensures no underline on hover */
+    opacity: 0.8; /* Optional: slight opacity change on hover for interactivity */
+}
+.bi-lightning-fill {
+    fill: yellow; /* Color of the icon */
+}
+
 
 :root {
     --primary: #f8a551;
@@ -140,8 +169,8 @@ a{
 
 /*madhesianenlogos foto n fund */
 .logo{
-    height: 130px;
-    width: auto;
+    height: 100px;
+
 }
 /*fund logo*/
 
