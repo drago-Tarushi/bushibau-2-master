@@ -75,7 +75,7 @@ a{
 /* Scrolled state */
 .navbar.scrolled {
     background: linear-gradient(to bottom, #f8f8f8 0%, #f8a551 100%) !important; /* Semi-transparent black */
-    padding: 0.25rem 0;
+    padding: 0.25rem 0.24rem;
 }
 
 .navbar .container .navbar .container-fluid {
@@ -1075,3 +1075,42 @@ footer a {
 }
 
 /*fund interio*/
+
+/* Styling for the Bootstrap carousel to fit well with your theme */
+#carouselExampleIndicators {
+    max-width: 60%;
+    margin: 20px auto; /* Center the carousel */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Stronger shadow for focus */
+}
+
+.carousel-inner img {
+    width: 100%; /* Ensure images fill the carousel */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for the images */
+}
+
+/* Control buttons customization if needed */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000; /* Black background to icons for better visibility */
+    border-radius: 50%; /* Circular icons */
+    padding: 10px; /* Padding around the icons */
+}
+
+/* Footer specific styles */
+footer {
+    background-color: #f8f9fa; /* A very light grey background */
+    color: #333; /* Matching dark text for contrast */
+    padding: 10px 20px;
+    text-align: center; /* Center-align footer content */
+    margin-top: 20px; /* Space above footer */
+}
+
+footer a {
+    color: #007bff; /* Bootstrap primary color for links */
+    text-decoration: none; /* No underline */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
+}
