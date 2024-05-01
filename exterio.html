@@ -1,21 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Außenbereich</title>
+    <title>Bushipv Montage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css"> <!-- Ensure the path to your CSS file is correct -->
+
+    <style>
+        html,
+        body {
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .project img {
+            height: 100%;
+            width: 100%;
+        }
+
+        #hero {
+            background-image: url(image.html/solar_logo.png);
+            /* Adjust the image path as needed */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 60vh;
+            width: 100%;
+            display: flex;
+            position: relative;
+            align-items: center;
+            overflow: hidden;
+            justify-content: center;
+        }
+
+        #hero .container {
+            text-align: center;
+            background-color: rgba(34, 39, 40, 0.295);
+            padding: 0 50px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Center horizontally */
+            position: relative;
+            z-index: 2;
+            opacity: 0.7;
+            margin: 0 auto;
+        }
+
+        #hero h1 {
+            font-style: italic;
+            font-size: 2.5rem;
+            position: relative;
+            animation: text_reveal 0.5s ease forwards;
+            color: white;
+            /* Assuming you want the text to be white */
+            width: 100%;
+            /* Ensures text alignment is managed by flexbox */
+        }
+
+        #hero::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        #hero h1 {
+            font-weight: 700;
+            text-align: center;
+            font-style: italic;
+            display: block;
+            font-size: 8.0 rem;
+            position: relative;
+            color: transparent;
+            animation: text_reveal .5s ease forwards;
+            animation-delay: 1.5s;
+        }
+
+        @media (min-width: 768px) {
+            #hero h1 {
+                font-size: 4rem;
+                /* Larger size on medium screens */
+            }
+        }
+
+        @media (min-width: 992px) {
+            #hero h1 {
+                font-size: 4rem;
+                /* Even larger on large screens */
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #hero h1 {
+                font-size: 5rem;
+                /* Very large on extra large screens */
+            }
+        }
+    </style>
+
 </head>
+
 <body>
-    <header>
-        <h1>"Außenmontage"</h1>
-    </header>
+    <nav class=" navbar navbar-expand-lg fixed-top navbar-light bg-transparent">
+        <div class="container">
+            <div class="brand">
+                <a class="navbar-brand" href="#hero">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-lightning-fill" viewBox="0 0 16 16">
+                        <path
+                        d="M11.3 0L10 5H6l.9-2.625a.5.5 0 0 0-.9-.45L.035 9.975a.5.5 0 0 0 .865.4L5 8H9l-.9 2.625a.5.5 0 0 0 .9.45l7.964-7.725a.5.5 0 0 0-.865-.4L11.3 0ZM8 13.5a.5.5 0 0 0-.9-.45L.136 21.975a.5.5 0 0 0 .865.4L6 20H10l-.9 2.625a.5.5 0 0 0 .9.45l7.964-7.725a.5.5 0 0 0-.865-.4L8 13.5Z" />
+                    </svg>
+                    <span class="bushiPV">bushiPV</span><span class="montage">montage</span>
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        
+                        <a class="nav-link" href="index.html">Haus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pune.html">Arbeitplätze</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="exterio.html">Dienstlestungen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Bewertungen</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link contact-button" href="mailto:info@bushipv-montage.de">Kontakt</a>
+                    </li>
+                </ul>
+                </form>
+            </div>
+        </div>
+    </nav>
+ 
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        window.addEventListener('scroll', function () {
+            var services = document.querySelectorAll('.fade-in');
+            services.forEach(function (service) {
+                if (isElementInViewport(service)) {
+                    service.classList.add('fade-in-show');
+                } else {
+                    service.classList.remove('fade-in-show');
+                }
+            });
+        });
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0
+            );
+        }
+        </script>
+
+    <!-- HERO-->
+    <section id="hero">
+        <!--<div class="hero vh-100 d-flex align-items-center" style="background-image:  url('image.html/best_logo.png');"> -->
+        <div class="container vh-100 d-flex">
+            <div class="row">
+                <div>
+                    <h1>AUßENMONTAGE</h1>
+                    <p class="text-white my-4"> Erfahrung mit 5-Sternen !
+                    </p>
+                    <!-- <a href="#" class="btn me-2 btn-primary"> Get Started</a> -->
+                    <a href="mailto:info@bushipv-montage.de" class="cta">MEHR ERFAHREN</a>
+                </div>
+            </div>
+        </div>
+        </div> <!-- FUND HERO-->
+    </section>
+
     <main>
         <!-- Section for Normal Houses -->
         <section class="exterior-service">
             <img src="image.html/normal1.png" alt="Normal House Solar Installation">
             <h2>Normale Häuser</h2>
-            <p>Unsere Solarenergie-Lösungen für normale Wohnhäuser sind darauf ausgelegt, sich in Ihr Dach einzufügen und dabei die Energieproduktion zu maximieren.</p>
+            <p>Unsere Solarenergie-Lösungen für normale Wohnhäuser sind darauf ausgelegt, sich in Ihr Dach einzufügen
+                und dabei die Energieproduktion zu maximieren.</p>
         </section>
 
 
@@ -23,28 +213,35 @@
         <section class="exterior-service">
             <img src="image.html/fusha.png" alt="Solar Installation in Fields">
             <h2>Felder</h2>
-            <p>Nutzen Sie ungenutzten Feldraum zur Erzeugung von Solarenergie mit Systemen, die je nach benötigtem Ausstoß skalierbar sind.</p>
+            <p>Nutzen Sie ungenutzten Feldraum zur Erzeugung von Solarenergie mit Systemen, die je nach benötigtem
+                Ausstoß skalierbar sind.</p>
         </section>
 
         <!-- Section for Parking Areas -->
-<section class="exterior-service">
-    <img src="image.html/parkim2.png" alt="Solaranlagen für Parkplätze">
-    <h2>Parkplätze</h2>
-    <p>Rüsten Sie Ihre Parkplätze mit unseren spezialisierten Solarlösungen aus. Diese Lösungen bieten nicht nur Schatten, sondern auch die Möglichkeit, Solarenergie zu erzeugen, die für das Laden von Elektrofahrzeugen oder zur allgemeinen Nutzung verwendet werden kann.</p>
-</section>
+        <section class="exterior-service">
+            <img src="image.html/parkim2.png" alt="Solaranlagen für Parkplätze">
+            <h2>Parkplätze</h2>
+            <p>Rüsten Sie Ihre Parkplätze mit unseren spezialisierten Solarlösungen aus. Diese Lösungen bieten nicht nur
+                Schatten, sondern auch die Möglichkeit, Solarenergie zu erzeugen, die für das Laden von
+                Elektrofahrzeugen oder zur allgemeinen Nutzung verwendet werden kann.</p>
+        </section>
 
 
         <!-- Section for Warehouses -->
         <section class="exterior-service">
             <img src="image.html/magazina.png" alt="Warehouse Solar Installation">
             <h2>Lagerhallen und Geschäfte</h2>
-            <p>Unsere industriellen Solarlösungen für Lagerhallen zielen darauf ab, Betriebskosten zu senken und die Energieunabhängigkeit zu erhöhen.</p>
+            <p>Unsere industriellen Solarlösungen für Lagerhallen zielen darauf ab, Betriebskosten zu senken und die
+                Energieunabhängigkeit zu erhöhen.</p>
         </section>
 
     </main>
 
     <footer>
-        <p>Kontaktieren Sie uns per E-Mail unter <a href="mailto:info@bushipv-montage.de">info@bushipv-montage.de</a> oder rufen Sie uns an unter <a href="tel:+4917624372734">+4917624372734</a> für weitere Informationen.</p> 
+        <p>Kontaktieren Sie uns per E-Mail unter <a href="mailto:info@bushipv-montage.de">info@bushipv-montage.de</a>
+            oder rufen Sie uns an unter <a href="tel:+4917624372734">+4917624372734</a> für weitere Informationen.</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
